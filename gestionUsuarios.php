@@ -27,3 +27,17 @@ function mostrarUsuarios($listaUsuarios){
         echo "<li>Nombre: ".$nombre.", Edad: ".$edades[$key]."<li>";
     }
 }
+
+function actualizarUsuario($listaUsuarios, $nombreNuevo, $edadNueva, $emailNuevo, $email){
+    $emails=array_column($listaUsuarios, 'email');
+    $key=array_search($email,$emails);
+    if($key !== false){
+        $listaUsuarios[$key] = array_replace($listaUsuarios[$key],
+        array(
+            'nombre' => $nombreNuevo,
+            'edad' => $edadNueva,
+            'email' => $emailNuevo
+        ));
+    }
+    return $listaUsuarios;
+}
