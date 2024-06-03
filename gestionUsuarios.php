@@ -17,5 +17,5 @@ function buscarUsuarioPorEmail($listaUsuarios,$email){
     if( $key !== false){
         return $listaUsuarios[$key]['nombre'];
         }
-        return "El emial no fue encontrado";
+        return "El email no fue encontrado";
 }
