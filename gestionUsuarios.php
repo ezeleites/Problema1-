@@ -19,3 +19,11 @@ function buscarUsuarioPorEmail($listaUsuarios,$email){
         }
         return "El emial no fue encontrado";
 }
+
+function mostrarUsuarios($listaUsuarios){
+    $nombres=array_column($listaUsuarios, 'nombre');
+    $edades=array_column($listaUsuarios, 'edad');
+    foreach($nombres as $key => $nombre){
+        echo "<li>Nombre: ".$nombre.", Edad: ".$edades[$key]."<li>";
+    }
+}
