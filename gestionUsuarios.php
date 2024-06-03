@@ -10,3 +10,12 @@ function agregarUsuario($usuario,$nombre,$edad,$email){
     $listaUsuarios [] = $usuario; 
     return $listaUsuarios;
 }
+
+function buscarUsuarioPorEmail($listaUsuarios,$email){
+    $emails=array_column($listaUsuarios,'email');
+    $key=array_search($email,$emails);
+    if( $key !== false){
+        return $listaUsuarios[$key]['nombre'];
+        }
+        return "El emial no fue encontrado";
+}
